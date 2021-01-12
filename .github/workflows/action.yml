@@ -14,9 +14,7 @@ jobs:
           java-version: "11" # The JDK version to make available on the path.
           architecture: x64 # (x64 or x86) - defaults to x64
       - name: Setup Clojure
-        uses: DeLaGuardo/setup-clojure@2.0
-        env:
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+        uses: DeLaGuardo/setup-clojure@master
         with:
           lein: "2.9.3"
       - name: "Run code"
@@ -24,4 +22,3 @@ jobs:
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
